@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>当前累计用餐人数</title>
+  <title><span class="thj">当前累计用餐人数</span></title>
   <style>
     :root{
       /* 替换下面的 URL 为你的背景图地址（可以是本地相对路径或线上 URL） */
-      --bg: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=3f6d9e5d9b7b7b3a1b5f6f6a4b3c2d1e');
+      --bg: url('./bag.png');
       --overlay: rgba(0,0,0,0.35);
       --accent: #FFD166;
       --text: #FFFFFF;
@@ -19,6 +19,7 @@
       font-family: "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei", sans-serif;
       background:#f5f7fb;
     }
+
 
     /* 顶部区域：占视口高度的三分之一 */
     .top-banner {
@@ -53,14 +54,20 @@
       padding: 12px 20px;
       width:100%;
       max-width:1200px;
+
+      /* ✅ 新增 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
     }
 
     .title {
-      font-size: 1.6rem;
+      font-size: 3.5rem;
       letter-spacing: 1px;
-      margin:0 0 8px 0;
+      margin:100px 0 8px 0;
       opacity: 0.95;
     }
+
 
     .count-card {
       display: inline-block;
@@ -69,10 +76,11 @@
       border-radius: 12px;
       min-width: 240px;
       box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+      margin-top: 40px; /* 标题和卡片之间的间距 */
     }
 
     .count-number {
-      font-size: 2.8rem;
+      font-size: 4.8rem;
       font-weight: 700;
       color: var(--accent);
       margin:0;
@@ -80,7 +88,7 @@
     }
 
     .count-label {
-      font-size: 0.92rem;
+      font-size: 4.92rem;
       color: rgba(255,255,255,0.9);
       margin-top:6px;
     }
@@ -107,7 +115,7 @@
       <!-- data-count：放最终的累计人数（可以在 JS 中读取并做动画/更新） -->
       <div class="count-card" aria-live="polite">
         <p id="countNumber" class="count-number" data-count="12345">0</p>
-        <div class="count-label">人</div>
+        <!-- <div class="count-label">人</div> -->
       </div>
     </div>
   </header>
